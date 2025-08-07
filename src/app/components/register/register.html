@@ -12,44 +12,62 @@
     </div>
 
     <div class="space-y-2" *ngIf="errors.length > 0">
-        <div class="flex items-center space-x-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700" *ngFor="let error of errors">
-          <span class="material-icons text-lg">error</span>
-          <span class="text-sm">{{error}}</span>
-        </div>
+      <div class="flex items-center space-x-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700" *ngFor="let error of errors">
+        <span class="material-icons text-lg">error</span>
+        <span class="text-sm">{{error}}</span>
       </div>
+    </div>
 
     <form class="space-y-6" (ngSubmit)="onSubmit()" #registerFormRef="ngForm">
-       <div>
-          <label for="name" class="form-label pt-6">Full Name</label>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="firstName" class="form-label pt-6">First Name</label>
           <div class="relative">
             <input
               type="text"
-              id="name"
-              name="name"
-              [(ngModel)]="registerForm.name"
+              id="firstName"
+              name="firstName"
+              [(ngModel)]="registerForm.firstName"
               class="form-input pl-10"
-              placeholder="Enter your full name"
+              placeholder="John"
               required
-              autocomplete="name"
+              autocomplete="firstName"
             >
           </div>
         </div>
 
-      <div>
-          <label for="email" class="form-label">University Email</label>
+        <div>
+          <label for="lastName" class="form-label pt-6">Last Name</label>
           <div class="relative">
             <input
-              type="email"
-              id="email"
-              name="email"
-              [(ngModel)]="registerForm.email"
+              type="text"
+              id="lastName"
+              name="lastName"
+              [(ngModel)]="registerForm.lastName"
               class="form-input pl-10"
-              placeholder="your.name@university.edu"
+              placeholder="Doe"
               required
-              autocomplete="email"
+              autocomplete="lastName"
             >
           </div>
         </div>
+      </div>
+
+      <div>
+        <label for="email" class="form-label">University Email</label>
+        <div class="relative">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="registerForm.email"
+            class="form-input pl-10"
+            placeholder="your.name@university.edu"
+            required
+            autocomplete="email"
+          >
+        </div>
+      </div>
 
       <div>
         <label for="password" class="form-label">Password</label>
