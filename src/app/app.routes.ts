@@ -3,6 +3,7 @@ import { Register } from './components/register/register';
 import { Login } from './components/login/login';
 import { Home } from './components/home/home';
 import { authGuard } from './guards/auth-guard';
+import { Profile } from './components/profile/profile';
 
 export const routes: Routes = [
     {
@@ -21,5 +22,11 @@ export const routes: Routes = [
         component: Login,
         title: 'Login page'
     },
+    {
+        path: 'profile',
+        component: Profile,
+        title: 'Profile page',
+        canActivate: [authGuard]
+    }
 
 ];
