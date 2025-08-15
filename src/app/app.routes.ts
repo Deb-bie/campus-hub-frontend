@@ -4,6 +4,7 @@ import { Login } from './components/login/login';
 import { Home } from './components/home/home';
 import { authGuard } from './guards/auth-guard';
 import { Profile } from './components/profile/profile';
+import { ExploreEvents } from './components/explore-events/explore-events';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,12 @@ export const routes: Routes = [
         path: 'profile',
         component: Profile,
         title: 'Profile page',
+        canActivate: [authGuard]
+    }, 
+    {
+        path: 'explore',
+        component: ExploreEvents,
+        title: 'Explore Events',
         canActivate: [authGuard]
     }
 
