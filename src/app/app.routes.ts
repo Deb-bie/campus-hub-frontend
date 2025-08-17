@@ -5,13 +5,13 @@ import { Home } from './components/home/home';
 import { authGuard } from './guards/auth-guard';
 import { Profile } from './components/profile/profile';
 import { ExploreEvents } from './components/explore-events/explore-events';
+import { EventDetails } from './components/event-details/event-details';
 
 export const routes: Routes = [
     {
         path: '',
         component: Home,
-        title: 'Home page',
-        canActivate: [authGuard]
+        title: 'Home page'
     },
     {
         path: 'register',
@@ -32,8 +32,12 @@ export const routes: Routes = [
     {
         path: 'explore',
         component: ExploreEvents,
-        title: 'Explore Events',
-        canActivate: [authGuard]
+        title: 'Explore Events'
+    },
+    {
+        path: 'events/:id',
+        component: EventDetails,
+        title: 'Event Details',
     }
 
 ];
